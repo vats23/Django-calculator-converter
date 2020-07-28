@@ -1,0 +1,7 @@
+{% extends 'basic.html' %}
+
+{% block body_block %}
+  <p> We also offer you to keep track of your money, If you want to use that feature LOGIN </p>
+  <p>New User Register here: <a href="{% url 'wallet:register' %}">REGISTER</a></p>
+  <p>Old User Login here: <a href="{% url 'wallet:user_login' %}">LOGIN</a></p>
+{% endblock %}

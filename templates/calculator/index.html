@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+{% block body_block %}
+  <form method="post">
+    {{form.as_p}}
+    {% if submitted %}
+      <p>Result : {{fun}}</p>
+    {%endif%}
+    {%csrf_token%}
+    <input type="submit" name="add" value="ADD">
+    <input type="submit" name="subtract" value="Subtract">
+    <input type="submit" name="divide" value="Divide">
+    <input type="submit" name="multiply" value="Multiply">
+    <input type="submit" name="modulo" value="Modulo">
+  </form>
+{%endblock%}

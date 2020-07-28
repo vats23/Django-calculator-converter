@@ -1,0 +1,21 @@
+{% extends 'basic.html' %}
+
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>Please Login</h1>
+    <form  action="{% url 'wallet:user_login' %}" method="post">
+      {% csrf_token %}
+      <p><label for="username">Username:</label><input type="text" name="username" placeholder="Enter User Name"></p>
+
+      <p><label for="password">Password:</label>
+      <input type="password" name="password" ></p>
+      <input type="submit" name="" value="Login">
+      {% if invalid_user %}
+        <p>***INVALID DETAILS***</p>
+      {% endif %}
+      {% if acc_not_active %}
+        <p>***Account Not Active***</p>
+      {% endif %}
+    </form>
+  </div>
+{% endblock %}

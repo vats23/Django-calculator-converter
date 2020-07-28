@@ -1,0 +1,14 @@
+{% extends 'basic.html' %}
+
+{% block body_block %}
+<form method="post">
+  <form method="post">
+    {{form.as_p}}
+    {%csrf_token%}
+    {% if fun %}
+      <p>Result : {{fun|slice:"2:"}}</p>
+    {%endif%}
+
+    <input type="submit" name="convert" value="Convert">
+  </form>
+{% endblock %}
